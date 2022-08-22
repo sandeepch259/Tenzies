@@ -31,7 +31,6 @@ export default function App() {
         for(let i=0; i<10 ; i++) {
             randomArray.push(generateNewDie())
         }
-        // console.log(randomArray)
         return randomArray
     }
     
@@ -43,9 +42,15 @@ export default function App() {
     />)
     
     function getNewDiceArray() {
+        if (!tenzies) {
         const newarr = randomNumArray.map(die => {
             return die.isHeld ? die : generateNewDie() } )
         setRandomNumArray(newarr)
+        } else {
+            setTenzies(false)
+            setRandomNumArray(allNewDice())
+        }
+        
     }
 
     function holdDice(id) {
@@ -63,7 +68,7 @@ export default function App() {
       <div className="die-container">
           {diceElements}
       </div>
-                <button className="roll-btn" onClick={getNewDiceArray}>
+                <button className="roll-btn" onClick={ getNewDiceArray }>
                     {!tenzies ? 'Roll' : 'New Game'}
                 </button>
     </main>
