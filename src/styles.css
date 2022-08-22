@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: 380px;
+  height: 360px;
+  background: #0b2434;
+  padding: 20px 30px;
+  margin: 5px;
+}
+
+.main-container {
+  width: 320px;
+  height: 320px;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
